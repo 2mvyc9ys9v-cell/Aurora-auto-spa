@@ -31,7 +31,7 @@
             position: relative;
         }
 
-        /* WATER DROPLETS ANIMATION CONTAINER */
+        /* REALISTIC WATER DROPLETS CONTAINER */
         .water-container {
             position: fixed;
             top: 0;
@@ -43,29 +43,47 @@
             overflow: hidden;
         }
 
+        /* REALISTIC WATER DROPLET STYLING */
         .drop {
             position: absolute;
-            top: -20px;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 50%;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+            top: -40px;
+            /* Teardrop shape */
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            /* Refractive glass/water shading */
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(212, 175, 55, 0.2) 100%);
+            box-shadow: 
+                inset -2px -3px 4px rgba(0, 0, 0, 0.4),
+                inset 1px 2px 3px rgba(255, 255, 255, 0.8),
+                0 4px 8px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(1px);
             animation: fall linear infinite;
+        }
+
+        /* MOTION STREAK FOR FAST FALLING RAIN DROPS */
+        .drop::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 30%;
+            width: 40%;
+            height: 18px;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.3), transparent);
+            border-radius: 50%;
         }
 
         @keyframes fall {
             0% {
-                transform: translateY(-20px) scale(0.8);
+                transform: translateY(-40px) scaleY(1.3);
                 opacity: 0;
             }
-            10% {
-                opacity: 0.6;
+            15% {
+                opacity: 0.85;
             }
-            90% {
-                opacity: 0.6;
+            85% {
+                opacity: 0.85;
             }
             100% {
-                transform: translateY(105vh) scale(1.1);
+                transform: translateY(108vh) scaleY(1.5);
                 opacity: 0;
             }
         }
@@ -391,22 +409,24 @@
         <p>&copy; 2026 Aurora Auto Spa. All Rights Reserved.</p>
     </footer>
 
-    <!-- SCRIPT TO GENERATE WATER DROPS -->
+    <!-- GENERATE REALISTIC WATER DROPLETS -->
     <script>
         const waterContainer = document.getElementById('water');
-        const dropletCount = 20;
+        const dropletCount = 28;
 
         for (let i = 0; i < dropletCount; i++) {
             const drop = document.createElement('div');
             drop.classList.add('drop');
             
-            // Randomize size, position, speed, and delay
-            const size = Math.random() * 8 + 4; // 4px to 12px
-            drop.style.width = `${size}px`;
-            drop.style.height = `${size + 4}px`;
+            // Randomize size, width/height ratio, position, speed, and delay
+            const width = Math.random() * 6 + 4; // 4px to 10px wide
+            const height = width * (Math.random() * 1.5 + 1.8); // elongated teardrop
+            
+            drop.style.width = `${width}px`;
+            drop.style.height = `${height}px`;
             drop.style.left = `${Math.random() * 100}%`;
-            drop.style.animationDuration = `${Math.random() * 4 + 4}s`; // 4s to 8s fall
-            drop.style.animationDelay = `${Math.random() * 5}s`;
+            drop.style.animationDuration = `${Math.random() * 2.5 + 2.5}s`; // 2.5s to 5s fast fall
+            drop.style.animationDelay = `${Math.random() * 4}s`;
             
             waterContainer.appendChild(drop);
         }
