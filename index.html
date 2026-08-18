@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Auto Spa | Premium Car Detailing</title>
+    <style>
+        /* BRAND COLOR PALETTE */
+        :root {
+            --bg-dark: #121619;
+            --card-bg: #1e2328;
+            --gold-accent: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-light: #f0f0f0;
+            --text-muted: #a0aab0;
+            --border-gold: #3a3321;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* HEADER & HERO SECTION */
+        header {
+            text-align: center;
+            padding: 50px 20px 30px;
+            border-bottom: 1px solid var(--border-gold);
+            background: linear-gradient(180deg, #181d22 0%, var(--bg-dark) 100%);
+        }
+
+        header h1 {
+            color: var(--gold-accent);
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+        }
+
+        header p.subtitle {
+            color: var(--gold-light);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* SERVICE MENU GRID */
+        .menu-title {
+            text-align: center;
+            color: var(--gold-accent);
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-accent);
+        }
+
+        .service-card h3 {
+            color: var(--gold-accent);
+            margin-top: 0;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-gold);
+            padding-bottom: 10px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .service-card ul li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .service-card ul li::before {
+            content: "•";
+            color: var(--gold-accent);
+            position: absolute;
+            left: 0;
+        }
+
+        .price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--gold-light);
+            text-align: center;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border-gold);
+        }
+
+        /* CALL TO ACTION / CONTACT */
+        .booking-section {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--gold-accent);
+            border-radius: 8px;
+        }
+
+        .btn-book {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+            color: #121619;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-book:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Aurora Auto Spa</h1>
+        <p class="subtitle">Premium Car Detailing</p>
+    </header>
+
+    <div class="container">
+        <h2 class="menu-title">Service Menu</h2>
+        
+        <div class="services-grid">
+            <!-- Wash & Vacuum -->
+            <div class="service-card">
+                <div>
+                    <h3>Wash & Vacuum</h3>
+                    <ul>
+                        <li>Door Jambs</li>
+                        <li>Wheels, Tires, Wheel Wells</li>
+                        <li>Hand Wash</li>
+                        <li>Dry Vehicle</li>
+                        <li>Windows (Interior & Exterior)</li>
+                        <li>Dress Tires</li>
+                        <li>Interior Wipe Down</li>
+                        <li>Thorough Vacuum</li>
+                    </ul>
+                </div>
+                <div class="price">$60 - $90</div>
+            </div>
+
+            <!-- Aurora Wash & Vacuum -->
+            <div class="service-card">
+                <div>
+                    <h3>Aurora Wash & Vacuum</h3>
+                    <ul>
+                        <li>Door Jambs</li>
+                        <li>Wheels, Tires, Wheel Wells</li>
+                        <li>Hand Wash</li>
+                        <li>Dry Vehicle</li>
+                        <li>Windows (Interior & Exterior)</li>
+                        <li>Dress Tires</li>
+                        <li>Detail Plastics, Vinyl, Leather</li>
+                        <li>Thorough Vacuum</li>
+                    </ul>
+                </div>
+                <div class="price">$100 - $130</div>
+            </div>
+
+            <!-- Extreme Interior -->
+            <div class="service-card">
+                <div>
+                    <h3>Extreme Interior</h3>
+                    <ul>
+                        <li>Door Jambs</li>
+                        <li>Pet Hair Removal</li>
+                        <li>Shampoo Carpets</li>
+                        <li>Detail Plastics, Vinyl, Leather</li>
+                        <li>Vacuum Interior & Trunk</li>
+                        <li>Windows (Interior)</li>
+                        <li>Rubber Floor Mat Protectant</li>
+                    </ul>
+                </div>
+                <div class="price">$120 - $150</div>
+            </div>
+
+            <!-- Extreme Exterior -->
+            <div class="service-card">
+                <div>
+                    <h3>Extreme Exterior</h3>
+                    <ul>
+                        <li>Door Jambs</li>
+                        <li>Wheels, Tires, Wheel Wells</li>
+                        <li>Thorough Hand Wash</li>
+                        <li>Badges, Grilles, Steps, etc.</li>
+                        <li>Dry Vehicle</li>
+                        <li>Spray Wax (1 mo. protection)</li>
+                        <li>Windows (Exterior)</li>
+                        <li>Dress Tires</li>
+                        <li><em>Clay bar treatment +$60</em></li>
+                    </ul>
+                </div>
+                <div class="price">$50 - $70</div>
+            </div>
+        </div>
+
+        <div class="booking-section">
+            <h2 style="color: var(--gold-accent); margin-top: 0;">Ready to Elevate Your Vehicle?</h2>
+            <p>Book your appointment today or call us for custom quotes.</p>
+            <a href="tel:1234567890" class="btn-book">Call / Text to Book</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Aurora Auto Spa. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
